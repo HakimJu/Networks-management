@@ -8,10 +8,7 @@ class Logs extends CI_Controller{
         $this->load->model('Logs_model');
     } 
 
-   
     function index()
-	
-	
     {
 		 if($this->session->userdata('logged_in'))
                 {
@@ -25,19 +22,10 @@ class Logs extends CI_Controller{
 
         $data['_view'] = 'logs/index';
         $this->load->view('layouts/main',$data);
-    }
-    
-     else
-                {
-                  //If no session, redirect to login page
-                  redirect(site_url('login'), 'refresh');
-                }
-
- 
+    } else
+         {
+             //If no session, redirect to login page
+             redirect(site_url('login'), 'refresh');
+         }
   }
-  
-       
-    
-
- 
 }
